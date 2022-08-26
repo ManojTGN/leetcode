@@ -1,4 +1,5 @@
 # leetcode
 
-| Problems | Solution |
-| [https://leetcode.com/problems/two-sum/][Two Sum] | [http://][C] |
+| Problem      | Solution |
+| --------- | -----:|
+| [TwoSum](https://leetcode.com/problems/two-sum/) | [C](https://github.com/ManojTGN/leetcode/tree/main/ProblemSolutions/TwoSum) |
