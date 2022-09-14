@@ -42,29 +42,50 @@ int getsize(char *p){
     return length;
 }
 
-int isThere(char *str,char *substring){
-
+int isThere(char *str,char substring){
+    int strLen = getsize(str);
+    for(int i = 0; i < 1; i++){
+        for(int j = 0; j < strLen; j++){
+            if(substring == str[j]) return 1;
+        }
+    }
+    return 0;
 }
 
 int lengthOfLongestSubstring(char * s){
     unsigned short int length = getsize(s);
     unsigned short int max = 0;
 
-    char *substring = malloc(length*sizeof(char));
+    char *substring = (char*)malloc(length*sizeof(char));
     for(int i = 0; i< length; i++){substring[i] = '\0';}
 
     unsigned short int ssIndex = 0;
     for(int i = 0; i < length; i++){
-    
 
+        for(int j = i; j < length;j++){
+            
+            if(!isThere(substring,s[j])){
+                substring[ssIndex] = s[j];
+                ssIndex++;
+            }else{
+                if(ssIndex > max) max = ssIndex;
+                for(int k = 0; k< length; k++){substring[k] = '\0';}
+        
+                ssIndex = 0;
+                substring[ssIndex] = s[j];
+
+                break;
+            }
+            
+        }
+        if(ssIndex > max) max = ssIndex;
     }
-
     return max;
 }
 
 void main(){
-    char input[11] = "abcabcbb";
+    char input[11] = "au";
     char *ptr = input;
     printf("%d",lengthOfLongestSubstring(ptr));
 }
-//printf("%s %i -flag:%d -max:%d\n",substring,ssIndex,sameFlag,max);
+//printf("[i:%d j:%d][str:%s] [substring:%s %d] [isThere:%c %d] [max:%d]\n",i,j,s,substring,getsize(substring),s[j],isThere(substring,s[j]),max);
