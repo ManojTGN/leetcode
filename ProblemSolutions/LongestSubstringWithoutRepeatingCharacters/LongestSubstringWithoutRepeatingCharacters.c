@@ -42,50 +42,42 @@ int getsize(char *p){
     return length;
 }
 
-int isThere(char *str,char substring){
-    int strLen = getsize(str);
-    for(int i = 0; i < 1; i++){
-        for(int j = 0; j < strLen; j++){
-            if(substring == str[j]) return 1;
-        }
-    }
-    return 0;
-}
-
 int lengthOfLongestSubstring(char * s){
-    unsigned short int length = getsize(s);
+
     unsigned short int max = 0;
+    unsigned short int score = 0;
+    unsigned short int isThereFlag = 0;
+    unsigned short int length = getsize(s);
 
-    char *substring = (char*)malloc(length*sizeof(char));
-    for(int i = 0; i< length; i++){substring[i] = '\0';}
-
-    unsigned short int ssIndex = 0;
     for(int i = 0; i < length; i++){
 
+        score = 0;
         for(int j = i; j < length;j++){
             
-            if(!isThere(substring,s[j])){
-                substring[ssIndex] = s[j];
-                ssIndex++;
-            }else{
-                if(ssIndex > max) max = ssIndex;
-                for(int k = 0; k< length; k++){substring[k] = '\0';}
-        
-                ssIndex = 0;
-                substring[ssIndex] = s[j];
-
-                break;
+            isThereFlag = 0;
+            for(int k = i; k < j; k++){
+                if(s[k] == s[j]){ isThereFlag = 1;break; }
             }
             
+            
+            if(isThereFlag){
+                if(score > max) max = score;
+                score = 0;
+                break;
+            }else{
+                score++;
+            }
         }
-        if(ssIndex > max) max = ssIndex;
+        if(score > max) max = score;
+
     }
+
     return max;
 }
 
 void main(){
-    char input[11] = "au";
+    char input[11] = " ";
     char *ptr = input;
     printf("%d",lengthOfLongestSubstring(ptr));
 }
-//printf("[i:%d j:%d][str:%s] [substring:%s %d] [isThere:%c %d] [max:%d]\n",i,j,s,substring,getsize(substring),s[j],isThere(substring,s[j]),max);
+//printf("[string:%s] [i:%d j:%d] [score:%d max:%d] [isThere:%d]\n",s,i,j,score,max,isThereFlag);
