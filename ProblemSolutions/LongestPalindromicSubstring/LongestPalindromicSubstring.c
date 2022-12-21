@@ -1,6 +1,6 @@
 // Source : https://leetcode.com/problems/median-of-two-sorted-arrays/
 // Author : Manoj A (ManojTGN)
-// Date   : 2022-09-19
+// Date   : 2023-12-21
 
 /***************************************************************************************************** 
  * Given a string s, return the longest palindromic substring in s.
@@ -25,14 +25,6 @@
  ******************************************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
-
-void print(char * s){
-    char *tmp = s;
-    while(*tmp != '\0'){
-        printf("%c",*tmp);
-        tmp++;
-    }
-}
 
 char * slice(char * s, int start, int end){
     int i;
@@ -73,17 +65,4 @@ char * longestPalindrome(char * s){
     }
 
     return substring;
-}
-
-int main(){
-
-    char str[12] = "aacabdkacaa\0";
-    char *ptr = longestPalindrome(str);
-    
-    while(*ptr != '\0'){
-        printf("%c",*ptr);
-        ptr++;
-    }
-    
-    return 0;
 }
