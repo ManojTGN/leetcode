@@ -41,6 +41,34 @@
  * 1 <= numRows <= 1000
  ******************************************************************************************************/
 
-char * convert(char * s, int numRows){
+#include <stdio.h>
+#include <stdlib.h>
 
+void print(char *s){
+    while( *s != '\0'){ printf("%c",*s);s++; }
+}
+
+int len(char * s){
+    int length = 0;
+    while( *s != '\0'){ length++; s++; }
+    return length;
+}
+
+char * convert(char * s, int numRows){
+    int length = len(s);
+    char *ptr = (char *) malloc(length * sizeof(char));
+
+    for(int i = 0; i< length; i++){
+        *(ptr+i) = *(s+ i*(numRows+numRows/2));
+    }
+
+    return ptr;
+}
+
+int main(){
+    char arr[15] = "PAYPALISHIRING\0";
+    char *s = arr;
+
+    print(convert(arr, 3));
+    return 0;
 }
