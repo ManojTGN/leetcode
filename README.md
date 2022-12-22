@@ -8,4 +8,4 @@
 | 4    | ✔[MedianofTwoSortedArrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | [C](https://github.com/ManojTGN/leetcode/tree/main/ProblemSolutions/MedianofTwoSortedArrays) |
 | 5    | ✔[LongestPalindromicSubstring](https://leetcode.com/problems/longest-palindromic-substring/) | [C](https://github.com/ManojTGN/leetcode/tree/main/ProblemSolutions/LongestPalindromicSubstring) |
 | 6    | 🌈[ZigzagConversion](https://leetcode.com/problems/zigzag-conversion/) | [C](https://github.com/ManojTGN/leetcode/tree/main/ProblemSolutions/ZigzagConversion) |
-| 6    | 🌈[StringToInteger(atoi)](https://leetcode.com/problems/string-to-integer-atoi/) | [C](https://github.com/ManojTGN/leetcode/tree/main/ProblemSolutions/StringToInteger(atoi)) |
+| 8    | 🌈[StringToInteger(atoi)](https://leetcode.com/problems/string-to-integer-atoi/) | [C](https://github.com/ManojTGN/leetcode/tree/main/ProblemSolutions/StringToInteger(atoi)) |
